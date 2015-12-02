@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_qlSO8JkGEeWvJovEa599Ww" name="Task">
+  <packagedElement xmi:type="uml:Class" xmi:id="_99zGUJkHEeWvJovEa599Ww" name="Task" visibility="public">
+    <packageImport xmi:id="_hkxl0JkIEeWvJovEa599Ww">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <ownedAttribute xmi:id="_ALklcJkIEeWvJovEa599Ww" name="label">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_C4k-QJkIEeWvJovEa599Ww" name="state">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_ushpwJkJEeWvJovEa599Ww"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_pHrWkJkIEeWvJovEa599Ww" name="toString">
+      <ownedParameter xmi:id="_scjAoJkIEeWvJovEa599Ww" direction="return">
+        <name xsi:nil="true"/>
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_6M7AQJkIEeWvJovEa599Ww" name="done"/>
+    <ownedOperation xmi:id="_AIPIIJkJEeWvJovEa599Ww" name="isDone">
+      <ownedParameter xmi:id="_B9I0QJkJEeWvJovEa599Ww" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+</uml:Model>
