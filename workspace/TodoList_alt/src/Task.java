@@ -1,5 +1,5 @@
 /**
- * Définition d'une tâche
+ * Définition d'une tâche classe abstraite
  * 
  * @author Arnaud Monteilhet : fr.92.arno@gm
  */
@@ -7,9 +7,36 @@
 // cf http://www.oracle.com/technetwork/articles/java/index-137868.html
 // for doc comments usage
 
-public class Task {
-	public String label;
-	public Boolean state;
+/*
+ * Une classe abstraite est une classe qui ne peut pas être instanciée. On utilise le mot clé abstract 
+ * NB une classe qui comporte au moins une méthode abstraite est obligatoirement une classe abstraite.
+ * 
+ * 
+ */
+
+
+
+/**
+ * 
+ * @author user
+ *
+ */
+public abstract class Task {
+	private String label;
+	private Boolean state;
+	
+	protected String getLabel() {
+		return label;
+	}
+	protected Boolean getState() {
+		return state;
+	}
+	protected void setLabel(String label) {
+		this.label = label;
+	}
+	protected void setState(Boolean state) {
+		this.state = state;
+	}
 	
 	 
 	/**
@@ -25,8 +52,8 @@ public class Task {
 	 */
 	public Task(String label)
 	{
-		this.label = label;
-		this.state = false;
+		setLabel(label);
+		setState(false);
 	}
 
 	/**
@@ -34,17 +61,15 @@ public class Task {
 	 * 
 	 * @return String
 	 */
-	public String toString()
-	{
-		return "Tâche '" + this.label + "' => " + this.state;
-	}
+	public abstract String toString();
+
 	
 	/**
 	 * Passage d'une tâche à l'état fait
 	 */
 	public void done()
 	{
-		state = true;
+		setState(true);
 	}
 	
 	/**
@@ -56,7 +81,7 @@ public class Task {
 	 *  </ul>
 	 */
 	public Boolean isDone() {
-		return state;
+		return getState();
 	}
 	
 	

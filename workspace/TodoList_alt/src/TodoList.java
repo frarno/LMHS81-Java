@@ -25,6 +25,16 @@ public class TodoList {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		SimpleTask t = new SimpleTask("Test");
+		System.out.println(t);
+
+		RDV tr = new RDV("Test", 1,10,2014,10,30);
+		System.out.println(tr);
+		if (tr.isLate()) {
+			System.out.println("Trop tard!");
+		}
+
+/*	
 		Task t0 = new Task();
 		System.out.println(t0);
 		
@@ -44,16 +54,19 @@ public class TodoList {
 		} else {
 			System.out.println("Tâche à faire !");
 		}
+*/		
 		System.out.println("------------------------------------------------------");
 		TaskList list = new TaskList();
 		list.addTask("Test");
-		list.addTask("Test 2");
+		list.addTask("Test 2", 24, 12, 2015, 20, 30);
 		list.taskDone(0);
 
 		
 		System.out.println(list);
 		
 		// System.out.printf("test %d",t.test());
+ 
+ 
 	}
 
 }

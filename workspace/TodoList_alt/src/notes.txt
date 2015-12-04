@@ -1,1 +1,2 @@
-signature d'une méthode java : nom de méthode et liste des paramètres 
+signature d'une méthode java : nom de méthode et liste des paramètres
+En java il n'est pas possible de définir des paramètres avec une valeur par défaut (utilisation de la surcharge de méthode pour simuler des paramètres avec des valeurs par défaut) 
