@@ -1,3 +1,12 @@
+package todolist;
+
+/*
+ * Les paquets permettent de regrouper les classes tout comme les répertoires permettent de regrouper les fichiers
+ * Il suffit d'indiquer package suivi du nom de paquet
+ * Par convention l'arborescence des paquets suivra la même arborescence que les répertoires
+ */
+
+
 /**
  * Définition d'une tâche classe abstraite
  * 

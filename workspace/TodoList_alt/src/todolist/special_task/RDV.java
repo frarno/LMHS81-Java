@@ -1,3 +1,4 @@
+package todolist.special_task;
 /**
  * Définition d'une tâche de type rendez-vous
  * 
@@ -14,6 +15,8 @@
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 import java.util.Calendar;
+
+import todolist.Task;
 
 
 public class RDV extends Task {

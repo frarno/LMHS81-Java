@@ -1,3 +1,4 @@
+package todolist;
 /**
  * Définition d'une liste de tâches
  * 
@@ -5,6 +6,10 @@
  */
 
 import java.util.ArrayList;
+
+import todolist.special_task.RDV;
+import todolist.special_task.SimpleTask;
+import todolist.MonException;
 
 public class TaskList {
 	
@@ -81,13 +86,19 @@ public class TaskList {
 	 *   <li>false: l'état n'a pas pu être modifié </li>
 	 * </ul>
 	 */
-	public Boolean taskDone(int idTask) {
+	
+	// https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html
+	public Boolean taskDone(int idTask) throws MonException {
 		// index out of bounds
 		if ((idTask < 0) || (idTask >= tasks.size())) {
-			return false;
+			throw new MonException(1, "Index hors limites");
 		} else {
-			tasks.get(idTask).done();
-			return true;
+			if (tasks.get(idTask).isDone()) {
+				return false;
+			} else {
+				tasks.get(idTask).done();
+				return true;
+			}
 		}
 		
 	}

@@ -1,3 +1,8 @@
+package todolist;
+import todolist.special_task.RDV;
+import todolist.special_task.SimpleTask;
+
+
 /**
  * 
  */
@@ -59,9 +64,14 @@ public class TodoList {
 		TaskList list = new TaskList();
 		list.addTask("Test");
 		list.addTask("Test 2", 24, 12, 2015, 20, 30);
-		list.taskDone(0);
-
 		
+		
+		try {
+			list.taskDone(0);
+			list.taskDone(20);
+		}catch (MonException e) {
+			e.display();
+		}
 		System.out.println(list);
 		
 		// System.out.printf("test %d",t.test());

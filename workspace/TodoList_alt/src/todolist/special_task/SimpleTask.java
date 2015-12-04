@@ -1,3 +1,6 @@
+package todolist.special_task;
+import todolist.Task;
+
 /**
  * Définition d'une tâche simple
  * 
