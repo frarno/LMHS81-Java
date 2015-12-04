@@ -24,6 +24,9 @@ import todolist.special_task.SimpleTask;
  * @author user
  *
  */
+
+
+
 public class TodoList {
 
 	/**
@@ -61,7 +64,7 @@ public class TodoList {
 		}
 */		
 		System.out.println("------------------------------------------------------");
-		TaskList list = new TaskList();
+		TaskList list = new TaskList("todolist.db");
 		list.addTask("Test");
 		list.addTask("Test 2", 24, 12, 2015, 20, 30);
 		
@@ -73,6 +76,9 @@ public class TodoList {
 			e.display();
 		}
 		System.out.println(list);
+		
+		// appel explicite pour monter la déconnexion
+		list.finalize();
 		
 		// System.out.printf("test %d",t.test());
  

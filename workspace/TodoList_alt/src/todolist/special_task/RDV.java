@@ -40,6 +40,11 @@ public class RDV extends Task {
 		
 	}
 
+	public GregorianCalendar getDate() {
+		return date;
+	}
+
+	
 	/* (non-Javadoc)
 	 * @see Task#toString()
 	 */

@@ -1,2 +1,8 @@
 signature d'une méthode java : nom de méthode et liste des paramètres
 En java il n'est pas possible de définir des paramètres avec une valeur par défaut (utilisation de la surcharge de méthode pour simuler des paramètres avec des valeurs par défaut) 
+
+classpath : il s'agit d'une variable qui indique à java où aller chercher des classes définies par l'utilisateur
+Modification du classpath en ligne de commandes: 
+java -classpath ".:sqlite-jdbc-3.8.11.2.jar" SQliteTest.java
+
+ 
