@@ -6,6 +6,7 @@ package todolist;
  */
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import todolist.special_task.RDV;
 import todolist.special_task.SimpleTask;
@@ -24,15 +25,31 @@ public class TaskList {
 	 *  @return la liste de tâches et leur état
 	 */
 	public String toString() {
-		
+
 		int len = tasks.size();
 		String result = "";
+/*		
+		// classical for loop
 		for (int i = 0; i< len; i++) {
 			result += i + 1 + " / " + len + ": " + tasks.get(i) + "\n"; 
 		}
-	
+*/
+/*		
+		// using for each style
+		int i = 0;
+		for (Task t : tasks) {
+			result += i++ + 1 + " / " + len + ": " + t + "\n";
+		}
+*/
+		// using an iterator
+		int i = 0;
+		Iterator<Task> iterator = tasks.iterator();
+		while (iterator.hasNext()) {
+			result += i++ + 1 + "/" + len + ": " + iterator.next() + "\n"; 
+		}
+		
 		return result;
-
+		
 	}
 	
 	/**
