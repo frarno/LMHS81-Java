@@ -12,9 +12,9 @@ import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import javax.swing.JTextField;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JButton;
+
+
 
 /*
  * ActionListener listener capturant les événemens relatif à un widget
@@ -61,14 +61,7 @@ public class MyFrame extends Frame {
 		GridBagConstraints gc = new GridBagConstraints();
 
 		data.setColumns(10);
-		button.addActionListener(new ActionListener(){
-
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("Saisie utilisateur = " + data.getText());
-
-			}
-		});
+		button.addActionListener(new MyButton(data));
 
 		gc.gridx = 0;
 		gc.gridy = 0;
