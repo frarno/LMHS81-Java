@@ -8,7 +8,9 @@
  */
 
 import javax.swing.JLabel;
-
+import javax.swing.JPanel;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 
 public class MyFrame extends Frame {
 
@@ -40,8 +42,25 @@ public class MyFrame extends Frame {
 	@Override
 	public void addContent() {
 
-		JLabel label = new JLabel("Ceci est un label");
-		this.getContentPane().add(label);
+		JLabel label = new JLabel("Gauche");
+		JLabel label2 = new JLabel("Centre");
+		JLabel label3 = new JLabel("Droite");
+		JLabel label4 = new JLabel("2eme ligne");
+		JPanel panel = new JPanel(new GridBagLayout());
+		GridBagConstraints gc = new GridBagConstraints();
+		gc.gridx = 0;
+		gc.gridy = 0;
+		panel.add(label, gc);
+		gc.gridx = 1;
+		gc.gridy = 0;
+		panel.add(label2, gc);
+		gc.gridx = 2;
+		gc.gridy = 0;
+		panel.add(label3, gc);
+		gc.gridx = 1;
+		gc.gridy = 1;
+		panel.add(label4, gc);
+		this.getContentPane().add(panel);
 	}
 
 
