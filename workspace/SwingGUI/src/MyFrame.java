@@ -11,6 +11,18 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+import javax.swing.JTextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+
+/*
+ * ActionListener listener capturant les événemens relatif à un widget
+ * WindowListener capture les événements relatifs auxfenêtres (ouverture, fermeture, redimensionnement etc...)
+ * MouseListener capture les événements de la souris
+ * ActionEvent contient le type d'événement déclencheur, et l'objet sur lequel l'événement s'est produit getSource
+ */
+
 
 public class MyFrame extends Frame {
 
@@ -42,24 +54,31 @@ public class MyFrame extends Frame {
 	@Override
 	public void addContent() {
 
-		JLabel label = new JLabel("Gauche");
-		JLabel label2 = new JLabel("Centre");
-		JLabel label3 = new JLabel("Droite");
-		JLabel label4 = new JLabel("2eme ligne");
+		JLabel label = new JLabel("Champ de saisie");
+		JTextField data = new JTextField();
 		JPanel panel = new JPanel(new GridBagLayout());
+		JButton button = new JButton("OK");
 		GridBagConstraints gc = new GridBagConstraints();
+
+		data.setColumns(10);
+		button.addActionListener(new ActionListener(){
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Saisie utilisateur = " + data.getText());
+
+			}
+		});
+
 		gc.gridx = 0;
 		gc.gridy = 0;
 		panel.add(label, gc);
 		gc.gridx = 1;
 		gc.gridy = 0;
-		panel.add(label2, gc);
-		gc.gridx = 2;
-		gc.gridy = 0;
-		panel.add(label3, gc);
-		gc.gridx = 1;
-		gc.gridy = 1;
-		panel.add(label4, gc);
+		panel.add(data, gc);
+		gc.gridx=0;
+		gc.gridy=2;
+		panel.add(button, gc);
 		this.getContentPane().add(panel);
 	}
 
