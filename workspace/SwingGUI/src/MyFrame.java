@@ -13,7 +13,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-
+import java.awt.Color;
 
 
 /*
@@ -54,22 +54,28 @@ public class MyFrame extends Frame {
 	@Override
 	public void addContent() {
 
-		JLabel label = new JLabel("Champ de saisie");
+		JLabel label = new JLabel("Saisissez un entier entre (0 < entier < 10) ");
+		JLabel console = new JLabel(" ");
 		JTextField data = new JTextField();
-		JPanel panel = new JPanel(new GridBagLayout());
 		JButton button = new JButton("OK");
+
+		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();
 
 		data.setColumns(10);
-		button.addActionListener(new MyButton(data));
+		console.setForeground(Color.red);
+		button.addActionListener(new MyButton(data,console));
 
 		gc.gridx = 0;
 		gc.gridy = 0;
+		panel.add(console, gc);
+		gc.gridx = 0;
+		gc.gridy = 1;
 		panel.add(label, gc);
 		gc.gridx = 1;
-		gc.gridy = 0;
+		gc.gridy = 1;
 		panel.add(data, gc);
-		gc.gridx=0;
+		gc.gridx=1;
 		gc.gridy=2;
 		panel.add(button, gc);
 		this.getContentPane().add(panel);
