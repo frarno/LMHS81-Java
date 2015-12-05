@@ -6,6 +6,7 @@ import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.TextField;
 
+
 public class MyButton implements ActionListener {
 
 	private JTextField textField;

@@ -14,7 +14,14 @@ import java.awt.GridBagConstraints;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
+import javax.swing.JTabbedPane;
+import javax.swing.SwingConstants;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
+import java.awt.event.KeyEvent;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
 
 /*
  * ActionListener listener capturant les événemens relatif à un widget
@@ -54,13 +61,35 @@ public class MyFrame extends Frame {
 	@Override
 	public void addContent() {
 
-		JLabel label = new JLabel("Saisissez un entier entre (0 < entier < 10) ");
+ 		JLabel label = new JLabel("Saisissez un entier entre (0 < entier < 10) ");
 		JLabel console = new JLabel(" ");
 		JTextField data = new JTextField();
 		JButton button = new JButton("OK");
 
 		JPanel panel = new JPanel(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();
+
+		String labels[] = { "A", "B", "C", "D" ,"E", "F", "G", "H", "I" ,"J"};
+		JList<String> list = new JList<String>(labels);
+		JScrollPane scroll = new JScrollPane(list);
+		JLabel console2 = new JLabel(" ");
+		JPanel panel2 = new JPanel();
+
+		list.addListSelectionListener(new ListSelectionListener() {
+
+			@Override
+			public void valueChanged(ListSelectionEvent e) {
+				console2.setText((String)list.getSelectedValue());
+
+			}
+		});
+		panel2.add(console2, gc);
+		panel2.add(scroll, gc);
+
+		JTabbedPane tabs = new JTabbedPane(SwingConstants.TOP);
+
+		tabs.addTab("onglet 1", panel);
+		tabs.addTab("onglet 2", panel2);
 
 		data.setColumns(10);
 		console.setForeground(Color.red);
@@ -78,7 +107,10 @@ public class MyFrame extends Frame {
 		gc.gridx=1;
 		gc.gridy=2;
 		panel.add(button, gc);
-		this.getContentPane().add(panel);
+
+		tabs.setMnemonicAt(0,KeyEvent.VK_A);
+		tabs.setMnemonicAt(1,KeyEvent.VK_B);
+		this.getContentPane().add(tabs);
 	}
 
 
